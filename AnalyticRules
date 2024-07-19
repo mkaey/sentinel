@@ -1,0 +1,31 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workspace": {
+            "type": "String"
+        }
+    },
+    "resources": [
+        {
+            "id": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/f2e34457-0cb2-4c29-98d7-4043d6624c0e')]",
+            "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/f2e34457-0cb2-4c29-98d7-4043d6624c0e')]",
+            "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules",
+            "kind": "MicrosoftSecurityIncidentCreation",
+            "apiVersion": "2023-12-01-preview",
+            "properties": {
+                "displayName": "Defender for Cloud High/Medium Alterts",
+                "description": "",
+                "enabled": true,
+                "productFilter": "Azure Security Center",
+                "severitiesFilter": [
+                    "High",
+                    "Medium"
+                ],
+                "displayNamesFilter": null,
+                "displayNamesExcludeFilter": null,
+                "alertRuleTemplateName": null
+            }
+        }
+    ]
+}
