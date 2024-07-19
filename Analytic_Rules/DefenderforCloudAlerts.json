@@ -9,7 +9,7 @@
     "resources": [
         {
             "id": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/f2e34457-0cb2-4c29-98d7-4043d6624c0e')]",
-            "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/f2e34457-0cb2-4c29-98d7-4043d6624c0e')]",
+            "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/abc')]",
             "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules",
             "kind": "MicrosoftSecurityIncidentCreation",
             "apiVersion": "2023-12-01-preview",
